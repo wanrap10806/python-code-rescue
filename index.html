@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Python Code Rescue | Class X</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <section class="hero">
+        <h1>🐍 Python Code Rescue</h1>
+        <p><b>Class X • ICT Learning Fair</b></p>
+
+        <div class="chips">
+            <span class="chip">💻 Coding</span>
+            <span class="chip">🐞 Debugging</span>
+            <span class="chip">🔮 Output Prediction</span>
+        </div>
+    </section>
+
+
+    <div class="status" id="status">
+        <span class="dot"></span>
+        <b id="statusText">Starting Python...</b>
+        — The Run buttons will activate when Python is ready.
+    </div>
+
+
+    <div class="progressbox">
+
+        <div class="ptop">
+            <span id="progressText">Challenge 1 of 3</span>
+
+            <span>
+                ⭐ Score:
+                <span id="score">0</span>/3
+            </span>
+        </div>
+
+        <div class="progress">
+            <div class="bar" id="bar"></div>
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         CHALLENGE 1
+    ========================== -->
+
+    <section class="card challenge active" id="c1">
+
+        <span class="label">CHALLENGE 1 • CODING</span>
+
+        <h2>➕ Add Two Numbers</h2>
+
+        <div class="question">
+            Write a Python program that asks the user to input two
+            numbers and displays their sum.
+        </div>
+
+        <div class="instruction">
+            💡 <b>Hint:</b> Write your Python program normally.
+            When you click <b>Run Python</b>, the program will ask
+            you for each <code>input()</code> value just like Python IDLE.
+        </div>
+
+        <textarea class="editor" id="code1"></textarea>
+
+        <div class="actions">
+
+            <button
+                class="run"
+                id="run1"
+                onclick="runPython1()"
+                disabled>
+                ▶ Run Python
+            </button>
+
+            <button
+                class="check"
+                type="button"
+                onclick="check1()">
+                ✓ Check Challenge
+            </button>
+
+        </div>
+
+        <div class="small" style="margin-top:10px">
+            Run your program first, then click
+            <b>Check Challenge</b> when you are satisfied with
+            your solution.
+        </div>
+
+        <div class="output" id="out1"></div>
+
+        <div id="fb1"></div>
+
+        <div class="actions">
+
+            <button
+                class="next"
+                id="next1"
+                onclick="go(2)"
+                disabled>
+                Next Challenge →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CHALLENGE 2
+    ========================== -->
+
+    <section class="card challenge" id="c2">
+
+        <span class="label">CHALLENGE 2 • DEBUGGING</span>
+
+        <h2>🐞 Rescue the Code</h2>
+
+        <div class="question">
+            Fix the error so that the program prints the numbers
+            <b>1 to 5</b>.
+        </div>
+
+        <div class="instruction">
+            Edit the code and run it. This uses the actual Python
+            interpreter in your browser.
+        </div>
+
+        <textarea class="editor" id="code2">for i in range(1, 6)
+    print(i)</textarea>
+
+        <div class="actions">
+
+            <button
+                class="run"
+                id="run2"
+                onclick="runPython2()"
+                disabled>
+                ▶ Run Python
+            </button>
+
+            <button
+                class="check"
+                onclick="check2()">
+                ✓ Check Challenge
+            </button>
+
+        </div>
+
+        <div class="output" id="out2">
+            Click ▶ Run Python to execute the code and display
+            the output here.
+        </div>
+
+        <div id="fb2"></div>
+
+        <div class="actions">
+
+            <button
+                class="next"
+                id="next2"
+                onclick="go(3)"
+                disabled>
+                Next Challenge →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CHALLENGE 3
+    ========================== -->
+
+    <section class="card challenge" id="c3">
+
+        <span class="label">CHALLENGE 3 • PREDICT THE OUTPUT</span>
+
+        <h2>🔮 What Will Python Print?</h2>
+
+        <div class="question">
+            Predict the output <b>before</b> running the code.
+        </div>
+
+        <div
+            class="editor"
+            style="min-height:145px">
+
+numbers = [10, 20, 30, 40]
+numbers.append(50)
+print(numbers)
+
+        </div>
+
+        <div class="instruction">
+            What will Python display?
+        </div>
+
+        <input
+            class="inputbox"
+            id="prediction"
+            placeholder="Type your predicted output">
+
+        <div class="actions">
+
+            <button
+                class="check"
+                onclick="check3()">
+                ✓ Check Prediction
+            </button>
+
+        </div>
+
+        <div class="output" id="out3">
+            Your prediction result will appear here.
+        </div>
+
+        <div id="fb3"></div>
+
+        <div class="actions">
+
+            <button
+                class="next"
+                id="finish"
+                onclick="finish()"
+                disabled>
+                Finish Station 🏆
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         COMPLETION
+    ========================== -->
+
+    <section
+        class="card challenge"
+        id="complete"
+        style="text-align:center">
+
+        <div style="font-size:55px">
+            🎉
+        </div>
+
+        <h2>Python Code Rescue Complete!</h2>
+
+        <div class="big">
+            <span id="finalScore">0</span>/3
+        </div>
+
+        <p id="finalMessage"></p>
+
+        <button
+            class="reset"
+            onclick="location.reload()">
+            ↻ Try Again
+        </button>
+
+    </section>
+
+
+    <div class="footer">
+        Class X ICT • Python Code Rescue • Learning Fair
+    </div>
+
+</div>
+
+
+<!-- Pyodide -->
+<script src="https://cdn.jsdelivr.net/pyodide/v0.27.7/full/pyodide.js"></script>
+
+<!-- Application JavaScript -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
